@@ -35,7 +35,8 @@ esConfig: {}
 #  log4j2.properties: |
 #    key = value
 
-createCert: true
+
+createCert: false
 
 esJvmOptions: {}
 #  processors.options: |
@@ -58,16 +59,16 @@ envFrom: []
 # Disable it to use your own elastic-credential Secret.
 secret:
   enabled: true
-  password: "" # generated randomly if not defined
+  password: "p6g3KwpC1pvHSA2E" # generated randomly if not defined
 
 # A list of secrets and their paths to mount inside the pod
 # This is useful for mounting certificates for security and for mounting
 # the X-Pack license
-secretMounts: []
-#  - name: elastic-certificates
-#    secretName: elastic-certificates
-#    path: /usr/share/elasticsearch/config/certs
-#    defaultMode: 0755
+secretMounts: 
+  - name: elastic-certificates
+    secretName: elastic-certificates
+    path: /usr/share/elasticsearch/config/certs
+    defaultMode: 0755
 
 hostAliases: []
 #- ip: "127.0.0.1"
