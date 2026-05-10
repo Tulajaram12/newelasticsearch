@@ -169,6 +169,8 @@ priorityClassName: ""
 
 # By default this will make sure two pods don't end up on the same node
 # Changing this to a region would allow you to spread pods across regions
+###Added
+#antiAffinityTopologyKey: "topology.kubernetes.io/zone"
 antiAffinityTopologyKey: "kubernetes.io/hostname"
 
 # Hard means that by default pods will only be scheduled if there are enough nodes for them
@@ -186,6 +188,7 @@ podManagementPolicy: "Parallel"
 # The environment variables injected by service links are not used, but can lead to slow Elasticsearch boot times when
 # there are many services in the current namespace.
 # If you experience slow pod startups you probably want to set this to `false`.
+# enableServiceLinks: false
 enableServiceLinks: true
 
 protocol: https
